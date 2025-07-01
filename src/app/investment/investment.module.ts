@@ -9,13 +9,15 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // if in AppModule
 import { MatTableModule } from '@angular/material/table';
-
+import { InvestmentChartComponent } from './investment-chart/investment-chart.component';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
     InvestmentFormComponent,
     InvestmentHeaderComponent,
-    InvestmentListComponent
+    InvestmentListComponent,
+    InvestmentChartComponent
   ],
   imports: [
     CommonModule,
@@ -24,8 +26,11 @@ import { MatTableModule } from '@angular/material/table';
     MatInputModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatTableModule
+    MatTableModule,
+    NgChartsModule
   ],
-  exports: [InvestmentFormComponent,InvestmentHeaderComponent,InvestmentListComponent]
+  exports: [InvestmentFormComponent,InvestmentHeaderComponent,InvestmentListComponent,
+  InvestmentChartComponent
+  ]
 })
 export class InvestmentModule { }

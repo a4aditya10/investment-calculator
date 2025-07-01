@@ -10,6 +10,7 @@ export class InvestmentListComponent implements OnChanges {
   @Input() annualInvestment!: number;
   @Input() expectedReturn!: number;
   @Input() duration!: number;
+  @Input() calculatedTableData: any[] = [];
 
   investmentData: any[] = [];
   displayedColumns: string[] = ['year', 'invested', 'interest', 'total'];

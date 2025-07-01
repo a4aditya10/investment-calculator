@@ -1,3 +1,4 @@
+<div class="list-container">
 <mat-card class="result-card">
   <h2>Investment Growth Over {{ duration }} Years</h2>
   <table mat-table [dataSource]="investmentData" class="mat-elevation-z8 full-width-table">
@@ -30,3 +31,5 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 </mat-card>
+<app-investment-chart [chartData]="calculatedTableData"></app-investment-chart>
+</div>

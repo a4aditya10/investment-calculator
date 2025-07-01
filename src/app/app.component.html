@@ -1,12 +1,14 @@
+ <!-- <app-investment-header></app-investment-header> -->
 <div class="form-wrapper">
-    <app-investment-header></app-investment-header>
+   
   <app-investment-form (calculated)="onCalculate($event)"></app-investment-form>
 <app-investment-list
   *ngIf="calculatedData"
   [initialInvestment]="calculatedData.initialInvestment"
   [annualInvestment]="calculatedData.annualInvestment"
   [expectedReturn]="calculatedData.expectedReturn"
-  [duration]="calculatedData.duration">
+  [duration]="calculatedData.duration"
+  [calculatedTableData]="calculatedTableData"
+  >
 </app-investment-list>
-
 </div>

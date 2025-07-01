@@ -16,7 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { InvestmentModule } from './investment/investment.module';
 
-
+import { NgChartsModule } from 'ng2-charts';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 @NgModule({
@@ -38,7 +38,8 @@ import { AppComponent } from './app.component';
     MatNativeDateModule,
     RouterModule,
     MatIconModule,
-    InvestmentModule
+    InvestmentModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
