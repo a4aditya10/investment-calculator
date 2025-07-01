@@ -3,7 +3,11 @@ import { CommonModule } from '@angular/common';
 import { InvestmentFormComponent } from './investment-form/investment-form.component';
 import { InvestmentHeaderComponent } from './investment-header/investment-header.component';
 import { InvestmentListComponent } from './investment-list/investment-list.component';
-
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // if in AppModule
 
 
 @NgModule({
@@ -13,7 +17,13 @@ import { InvestmentListComponent } from './investment-list/investment-list.compo
     InvestmentListComponent
   ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    BrowserAnimationsModule
+  ],
+  exports: [InvestmentFormComponent],
 })
 export class InvestmentModule { }
