@@ -1,48 +1,51 @@
-<!-- <mat-card>
-    <form >
-         <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Favorite food</mat-label>
-    <input matInput placeholder="Ex. Pizza" value="Sushi"/>
-  </mat-form-field> 
-
-         <mat-form-field appearance="fill">
-            <mat-label>Annual Investment</mat-label>
-            <input matInput name = "Annual_Investment" required>
-         </mat-form-field>  
-
-         <mat-form-field appearance="fill">
-            <mat-label>Expected Return</mat-label>
-            <input matInput name = "Expected_Return" type="number" required>
-         </mat-form-field>  
-
-         <mat-form-field appearance="fill">
-            <mat-label>Duration(in Years)</mat-label>
-            <input matInput name = "Duration" required>
-         </mat-form-field>   
-    </form>
-</mat-card> -->
-
-
 <form>
-  <mat-form-field appearance="fill">
+  <mat-form-field floatLabel="always">
     <mat-label>Initial Investment</mat-label>
-    <input matInput type="number"  name="initial">
+    <input
+      matInput
+      type="text"
+      inputmode="numeric"
+      pattern="[0-9]*"
+      (keypress)="allowOnlyNumbers($event)"
+      autocomplete="off"
+    />
   </mat-form-field>
 
-  <mat-form-field appearance="fill">
+  <mat-form-field floatLabel="always">
     <mat-label>Annual Investment</mat-label>
-    <input matInput type="number"  name="annual">
+    <input
+      matInput
+      type="text"
+      inputmode="numeric"
+      pattern="[0-9]*"
+      (keypress)="allowOnlyNumbers($event)"
+      autocomplete="off"
+    />
   </mat-form-field>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Expected Return</mat-label>
-    <input matInput type="number"  name="return">
+  <mat-form-field floatLabel="always">
+    <mat-label>Expected Retuens</mat-label>
+    <input
+      matInput
+      type="text"
+      inputmode="numeric"
+      pattern="[0-9]*"
+      (keypress)="allowOnlyNumbers($event)"
+      autocomplete="off"
+    />
   </mat-form-field>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Duration (Years)</mat-label>
-    <input matInput type="number"  name="duration">
+  <mat-form-field floatLabel="always">
+    <mat-label>Duration</mat-label>
+    <input
+      matInput
+      type="text"
+      inputmode="numeric"
+      pattern="[0-9]*"
+      (keypress)="allowOnlyNumbers($event)"
+      autocomplete="off"
+    />
   </mat-form-field>
 
-  <button mat-raised-button color="primary" >Calculate</button>
+  <button mat-raised-button color="primary">Calculate</button>
 </form>

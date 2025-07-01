@@ -24,6 +24,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
     FormsModule,
     BrowserAnimationsModule
   ],
-  exports: [InvestmentFormComponent],
+  exports: [InvestmentFormComponent,InvestmentHeaderComponent,InvestmentListComponent],
 })
 export class InvestmentModule { }
