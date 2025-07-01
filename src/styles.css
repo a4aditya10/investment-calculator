@@ -6,8 +6,6 @@ body {
   background-color: #121212; /* Dark background */
   color: #e0ffe0;             /* Light text */
 }
-
-/* Optional: make app container full height and center */
 app-root {
   display: flex;
   flex-direction: column;

@@ -56,3 +56,14 @@ button:hover {
 mat-form-field {
   margin: 1rem;
 }
+/* Remove spinner for input type number (Chrome, Safari, Edge) */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox ke liye */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

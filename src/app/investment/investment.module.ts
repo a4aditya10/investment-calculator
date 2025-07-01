@@ -8,6 +8,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // if in AppModule
+import { MatTableModule } from '@angular/material/table';
 
 
 @NgModule({
@@ -22,8 +23,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatTableModule
   ],
-  exports: [InvestmentFormComponent,InvestmentHeaderComponent,InvestmentListComponent],
+  exports: [InvestmentFormComponent,InvestmentHeaderComponent,InvestmentListComponent]
 })
 export class InvestmentModule { }

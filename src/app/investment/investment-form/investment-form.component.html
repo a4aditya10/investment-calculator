@@ -1,51 +1,58 @@
-<form>
-  <mat-form-field floatLabel="always">
-    <mat-label>Initial Investment</mat-label>
-    <input
-      matInput
-      type="text"
-      inputmode="numeric"
-      pattern="[0-9]*"
-      (keypress)="allowOnlyNumbers($event)"
-      autocomplete="off"
-    />
-  </mat-form-field>
+<form  #form="ngForm" (ngSubmit)="calculate(form)">
+ <mat-form-field floatLabel="always">
+  <mat-label>Initial Investment</mat-label>
+  <input
+    matInput
+    type="number"
+    name="initialInvestment"
+    ngModel
+    step="0.01"
+    min="0"
+    (keydown)="blockInvalidKeys($event)"
+  />
+</mat-form-field>
 
-  <mat-form-field floatLabel="always">
-    <mat-label>Annual Investment</mat-label>
-    <input
-      matInput
-      type="text"
-      inputmode="numeric"
-      pattern="[0-9]*"
-      (keypress)="allowOnlyNumbers($event)"
-      autocomplete="off"
-    />
-  </mat-form-field>
+<mat-form-field floatLabel="always">
+  <mat-label>Annual Investment</mat-label>
+  <input
+    matInput
+    type="number"
+    name="annualInvestment"
+    ngModel
+    step="0.01"
+    min="0"
+    (keydown)="blockInvalidKeys($event)"
+  />
+</mat-form-field>
 
-  <mat-form-field floatLabel="always">
-    <mat-label>Expected Retuens</mat-label>
-    <input
-      matInput
-      type="text"
-      inputmode="numeric"
-      pattern="[0-9]*"
-      (keypress)="allowOnlyNumbers($event)"
-      autocomplete="off"
-    />
-  </mat-form-field>
+<mat-form-field floatLabel="always">
+  <mat-label>Expected Returns (%)</mat-label>
+  <input
+    matInput
+    type="number"
+    name="expectedReturn"
+    ngModel
+    step="0.01"
+    min="0"
+    (keydown)="blockInvalidKeys($event)"
+  />
+</mat-form-field>
 
-  <mat-form-field floatLabel="always">
-    <mat-label>Duration</mat-label>
-    <input
-      matInput
-      type="text"
-      inputmode="numeric"
-      pattern="[0-9]*"
-      (keypress)="allowOnlyNumbers($event)"
-      autocomplete="off"
-    />
-  </mat-form-field>
+<mat-form-field floatLabel="always">
+  <mat-label>Duration (in Years)</mat-label>
+  <input
+    matInput
+    type="number"
+    name="duration"
+    ngModel
+    step="0.1"
+    min="0"
+    (keydown)="blockInvalidKeys($event)"
+  />
+</mat-form-field>
+  <button mat-raised-button color="primary" type="submit">CALCULATE</button>
 
-  <button mat-raised-button color="primary">Calculate</button>
+  <p *ngIf="!form.valid && form.touched" style="color: rgb(0, 0, 0);">
+  ⚠️ Please fill all the fields correctly.
+</p>
 </form>

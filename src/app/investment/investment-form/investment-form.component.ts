@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -10,12 +10,40 @@ export class InvestmentFormComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-  allowOnlyNumbers(event: KeyboardEvent): void {
-    const charCode = event.key.charCodeAt(0);
 
-    // Allow only digits (0-9)
-    if (charCode < 48 || charCode > 57) {
+  @Output() calculated = new EventEmitter<any>();  // ✅ Only once
+
+  allowOnlyNumbers(event: KeyboardEvent): void {
+    const char = event.key;
+
+    if (!/^[0-9.]$/.test(char)) {
       event.preventDefault();
+    }
+
+    const inputElement = event.target as HTMLInputElement;
+    if (char === '.' && inputElement.value.includes('.')) {
+      event.preventDefault();
+    }
+  }
+  blockInvalidKeys(event: KeyboardEvent): void {
+  const invalidChars = ['e', 'E', '+', '-'];
+  if (invalidChars.includes(event.key)) {
+    event.preventDefault();
+  }
+}
+  calculate(form: NgForm) {
+    if (form.valid) {
+      const raw = form.value;
+      const parsed = {
+        initialInvestment: Number(raw.initialInvestment),
+        annualInvestment: Number(raw.annualInvestment),
+        expectedReturn: Number(raw.expectedReturn),
+        duration: Number(raw.duration),
+      };
+      console.log("Form submitted:", parsed);
+      this.calculated.emit(parsed);
+    } else {
+      console.warn("Form invalid!");
     }
   }
 }

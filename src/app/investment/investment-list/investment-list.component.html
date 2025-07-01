@@ -1,1 +1,32 @@
-<p>investment-list works!</p>
+<mat-card class="result-card">
+  <h2>Investment Growth Over {{ duration }} Years</h2>
+  <table mat-table [dataSource]="investmentData" class="mat-elevation-z8 full-width-table">
+    
+    <!-- Year Column -->
+    <ng-container matColumnDef="year">
+      <th mat-header-cell *matHeaderCellDef> Year </th>
+      <td mat-cell *matCellDef="let element"> {{ element.year }} </td>
+    </ng-container>
+
+    <!-- Invested Column -->
+    <ng-container matColumnDef="invested">
+      <th mat-header-cell *matHeaderCellDef> Invested </th>
+      <td mat-cell *matCellDef="let element"> ₹{{ element.invested | number:'1.0-2' }} </td>
+    </ng-container>
+
+    <!-- Interest Column -->
+    <ng-container matColumnDef="interest">
+      <th mat-header-cell *matHeaderCellDef> Interest </th>
+      <td mat-cell *matCellDef="let element"> ₹{{ element.interest | number:'1.2-2' }} </td>
+    </ng-container>
+
+    <!-- Total Column -->
+    <ng-container matColumnDef="total">
+      <th mat-header-cell *matHeaderCellDef> Total </th>
+      <td mat-cell *matCellDef="let element"> ₹{{ element.total | number:'1.2-2' }} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</mat-card>
