@@ -1,6 +1,6 @@
- <!-- <app-investment-header></app-investment-header> -->
-<div class="form-wrapper">
-   
+ <app-investment-header></app-investment-header>
+
+ <div class="form-wrapper"> 
   <app-investment-form (calculated)="onCalculate($event)"></app-investment-form>
 <app-investment-list
   *ngIf="calculatedData"
